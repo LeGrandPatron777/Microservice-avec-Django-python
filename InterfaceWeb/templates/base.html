@@ -1,0 +1,27 @@
+<!-- templates/nom_de_votre_application/base.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Inclure les fichiers CSS ici -->
+</head>
+
+<body>
+    <header>
+        <!-- En-tête commun -->
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Pied de page commun -->
+    </footer>
+
+    <!-- Inclure les fichiers JavaScript ici -->
+</body>
+
+</html>
