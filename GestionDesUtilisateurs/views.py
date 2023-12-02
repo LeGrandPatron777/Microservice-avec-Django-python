@@ -24,7 +24,9 @@ class CreateUserView(APIView):
 
 
 class UpdateUserView(APIView):
-    permission_classes = [AllowAny]  # Modification pour restreindre l'accès
+    permission_classes = [
+        AllowAny
+    ]  # Modification pour restreindre l'accès aux utilisateurs authentifiés
 
     @swagger_auto_schema(
         operation_description="Mettre à jour un utilisateur",
@@ -42,5 +44,7 @@ class UpdateUserView(APIView):
         serializer = UserSerializer(user, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data)
+            return Response(
+                serializer.data, status=status.HTTP_200_OK
+            )  # Statut HTTP modifié
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
