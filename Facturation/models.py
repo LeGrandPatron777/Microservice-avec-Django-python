@@ -10,4 +10,4 @@ class Facture(models.Model):
     montant = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField(auto_now_add=True)
     details = models.TextField()
-    # Autres champs nécessaires eeeeeeeeeeeee
+    # Autres champs nécessaires dd
